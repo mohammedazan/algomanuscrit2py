@@ -1,7 +1,3 @@
-
----
-
-```markdown
 # ✍️ Handwritten Algorithm to Python Code  
 ### Master Project – Deep Learning & Artificial Neural Networks
 
@@ -248,6 +244,4 @@ It emphasizes **clarity, robustness, and educational value** over unnecessary co
 
 👨‍🎓 *Master Project – Deep Learning & Artificial Neural Networks*
 
-```
 
----
