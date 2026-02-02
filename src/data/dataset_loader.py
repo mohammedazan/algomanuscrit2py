@@ -69,7 +69,7 @@ class DatasetLoader:
             
             # Load the CSV
             print(f"📁 Loading dataset from: {self.dataset_path}")
-            self.df = pd.read_csv(self.dataset_path)
+            self.df = pd.read_csv(self.dataset_path, sep=",", quotechar='"',escapechar="\\",engine="python",encoding="utf-8")
             
             print(f"✓ Dataset loaded successfully!")
             print(f"   Columns: {list(self.df.columns)}")
