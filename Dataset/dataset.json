@@ -1,0 +1,357 @@
+[
+  {
+    "id": "1",
+    "image_path": "./images/alg_01.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(a)\nAfficher(a)",
+    "python_code": "a = int(input())\nprint(a)"
+  },
+  {
+    "id": "2",
+    "image_path": "./images/alg_02.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(a)\nLire(b)\nAfficher(a)\nAfficher(b)",
+    "python_code": "a = int(input())\nb = int(input())\nprint(a)\nprint(b)"
+  },
+  {
+    "id": "3",
+    "image_path": "./images/alg_03.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nAfficher(\"La valeur est :\")\nAfficher(x)",
+    "python_code": "x = int(input())\nprint(\"La valeur est :\")\nprint(x)"
+  },
+  {
+    "id": "4",
+    "image_path": "./images/alg_04.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(nom)\nAfficher(nom)",
+    "python_code": "nom = input()\nprint(nom)"
+  },
+  {
+    "id": "5",
+    "image_path": "./images/alg_05.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(nom)\nAfficher(\"Bonjour\")\nAfficher(nom)",
+    "python_code": "nom = input()\nprint(\"Bonjour\")\nprint(nom)"
+  },
+
+  {
+    "id": "6",
+    "image_path": "./images/alg_06.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(a)\nLire(b)\nAfficher(a + b)",
+    "python_code": "a = int(input())\nb = int(input())\nprint(a + b)"
+  },
+  {
+    "id": "7",
+    "image_path": "./images/alg_07.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(n)\nAfficher(n)\nAfficher(n)",
+    "python_code": "n = int(input())\nprint(n)\nprint(n)"
+  },
+  {
+    "id": "8",
+    "image_path": "./images/alg_08.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(age)\nAfficher(\"Votre age est\")\nAfficher(age)",
+    "python_code": "age = int(input())\nprint(\"Votre age est\")\nprint(age)"
+  },
+  {
+    "id": "9",
+    "image_path": "./images/alg_09.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nAfficher(\"Operation terminee\")",
+    "python_code": "x = int(input())\nprint(\"Operation terminee\")"
+  },
+  {
+    "id": "10",
+    "image_path": "./images/alg_010.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(n)\nAfficher(\"Le nombre est :\")\nAfficher(n)",
+    "python_code": "n = int(input())\nprint(\"Le nombre est :\")\nprint(n)"
+  },
+
+  {
+    "id": "11",
+    "image_path": "./images/alg_011.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(a)\nAfficher(\"Valeur de a =\")\nAfficher(a)",
+    "python_code": "a = int(input())\nprint(\"Valeur de a =\")\nprint(a)"
+  },
+  {
+    "id": "12",
+    "image_path": "./images/alg_012.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(b)\nAfficher(\"b:\")\nAfficher(b)",
+    "python_code": "b = int(input())\nprint(\"b:\")\nprint(b)"
+  },
+  {
+    "id": "13",
+    "image_path": "./images/alg_013.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nLire(y)\nAfficher(\"Somme:\")\nAfficher(x + y)",
+    "python_code": "x = int(input())\ny = int(input())\nprint(\"Somme:\")\nprint(x + y)"
+  },
+  {
+    "id": "14",
+    "image_path": "./images/alg_014.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nLire(y)\nAfficher(\"Difference:\")\nAfficher(x - y)",
+    "python_code": "x = int(input())\ny = int(input())\nprint(\"Difference:\")\nprint(x - y)"
+  },
+  {
+    "id": "15",
+    "image_path": "./images/alg_015.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nLire(y)\nAfficher(\"Produit:\")\nAfficher(x * y)",
+    "python_code": "x = int(input())\ny = int(input())\nprint(\"Produit:\")\nprint(x * y)"
+  },
+
+  {
+    "id": "16",
+    "image_path": "./images/alg_016.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nAfficher(\"Double:\")\nAfficher(2 * x)",
+    "python_code": "x = int(input())\nprint(\"Double:\")\nprint(2 * x)"
+  },
+  {
+    "id": "17",
+    "image_path": "./images/alg_017.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(x)\nAfficher(\"Carre:\")\nAfficher(x * x)",
+    "python_code": "x = int(input())\nprint(\"Carre:\")\nprint(x * x)"
+  },
+  {
+    "id": "18",
+    "image_path": "./images/alg_018.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(a)\nLire(b)\nAfficher(\"Moyenne:\")\nAfficher((a + b) / 2)",
+    "python_code": "a = int(input())\nb = int(input())\nprint(\"Moyenne:\")\nprint((a + b) / 2)"
+  },
+
+  {
+    "id": "19",
+    "image_path": "./images/alg_019.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(prenom)\nLire(nom)\nAfficher(prenom)\nAfficher(nom)",
+    "python_code": "prenom = input()\nnom = input()\nprint(prenom)\nprint(nom)"
+  },
+  {
+    "id": "20",
+    "image_path": "./images/alg_020.jpeg",
+    "category": "Lecture & Écriture",
+    "text": "Lire(message)\nAfficher(\"Vous avez ecrit:\")\nAfficher(message)",
+    "python_code": "message = input()\nprint(\"Vous avez ecrit:\")\nprint(message)"
+  }
+  ,
+{
+  "id": "21",
+  "image_path": "./images/alg_021.jpeg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nLire(c)\nAfficher(a)\nAfficher(b)\nAfficher(c)",
+  "python_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint(a)\nprint(b)\nprint(c)"
+},
+{
+  "id": "22",
+  "image_path": "./images/alg_022.jpeg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nLire(c)\nAfficher(\"Somme:\")\nAfficher(a + b + c)",
+  "python_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint(\"Somme:\")\nprint(a + b + c)"
+},
+{
+  "id": "23",
+  "image_path": "./images/alg_023.jpeg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nAfficher(\"Moyenne:\")\nAfficher((a + b) / 2)",
+  "python_code": "a = int(input())\nb = int(input())\nprint(\"Moyenne:\")\nprint((a + b) / 2)"
+},
+{
+  "id": "24",
+  "image_path": "./images/alg_024.jpeg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nAfficher(\"Resultat:\")\nAfficher((a + b) * 2)",
+  "python_code": "a = int(input())\nb = int(input())\nprint(\"Resultat:\")\nprint((a + b) * 2)"
+},
+{
+  "id": "25",
+  "image_path": "./images/alg_025.jpeg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"Avant:\")\nAfficher(x)\nAfficher(\"Apres:\")\nAfficher(x + 1)",
+  "python_code": "x = int(input())\nprint(\"Avant:\")\nprint(x)\nprint(\"Apres:\")\nprint(x + 1)"
+},
+{
+  "id": "26",
+  "image_path": "./images/alg_026.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"Precedent:\")\nAfficher(x - 1)",
+  "python_code": "x = int(input())\nprint(\"Precedent:\")\nprint(x - 1)"
+},
+{
+  "id": "27",
+  "image_path": "./images/alg_027.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"x + 10 =\")\nAfficher(x + 10)",
+  "python_code": "x = int(input())\nprint(\"x + 10 =\")\nprint(x + 10)"
+},
+{
+  "id": "28",
+  "image_path": "./images/alg_028.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"x - 5 =\")\nAfficher(x - 5)",
+  "python_code": "x = int(input())\nprint(\"x - 5 =\")\nprint(x - 5)"
+},
+{
+  "id": "29",
+  "image_path": "./images/alg_029.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"x * 4 =\")\nAfficher(x * 4)",
+  "python_code": "x = int(input())\nprint(\"x * 4 =\")\nprint(x * 4)"
+},
+{
+  "id": "30",
+  "image_path": "./images/alg_030.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nAfficher(\"x / 3 =\")\nAfficher(x / 3)",
+  "python_code": "x = int(input())\nprint(\"x / 3 =\")\nprint(x / 3)"
+},
+{
+  "id": "31",
+  "image_path": "./images/alg_031.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(prenom)\nLire(nom)\nAfficher(prenom)\nAfficher(nom)",
+  "python_code": "prenom = input()\nnom = input()\nprint(prenom)\nprint(nom)"
+},
+{
+  "id": "32",
+  "image_path": "./images/alg_032.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(prenom)\nLire(nom)\nAfficher(\"Nom complet:\")\nAfficher(prenom)\nAfficher(nom)",
+  "python_code": "prenom = input()\nnom = input()\nprint(\"Nom complet:\")\nprint(prenom)\nprint(nom)"
+},
+{
+  "id": "33",
+  "image_path": "./images/alg_033.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(ville)\nAfficher(\"Ville:\")\nAfficher(ville)",
+  "python_code": "ville = input()\nprint(\"Ville:\")\nprint(ville)"
+},
+{
+  "id": "34",
+  "image_path": "./images/alg_034.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(message)\nAfficher(\"Vous avez ecrit:\")\nAfficher(message)",
+  "python_code": "message = input()\nprint(\"Vous avez ecrit:\")\nprint(message)"
+},
+{
+  "id": "35",
+  "image_path": "./images/alg_035.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(nom)\nAfficher(\"Bienvenue,\")\nAfficher(nom)\nAfficher(\"!\")",
+  "python_code": "nom = input()\nprint(\"Bienvenue,\")\nprint(nom)\nprint(\"!\")"
+},
+{
+  "id": "36",
+  "image_path": "./images/alg_036.jpg",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nAfficher(\"a =\")\nAfficher(a)\nAfficher(\"b =\")\nAfficher(b)",
+  "python_code": "a = int(input())\nb = int(input())\nprint(\"a =\")\nprint(a)\nprint(\"b =\")\nprint(b)"
+},
+{
+  "id": "37",
+  "image_path": "./images/alg_037.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nLire(y)\nAfficher(\"x + y =\")\nAfficher(x + y)\nAfficher(\"x - y =\")\nAfficher(x - y)",
+  "python_code": "x = int(input())\ny = int(input())\nprint(\"x + y =\")\nprint(x + y)\nprint(\"x - y =\")\nprint(x - y)"
+},
+{
+  "id": "38",
+  "image_path": "./images/alg_038.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(x)\nLire(y)\nAfficher(\"x * y =\")\nAfficher(x * y)\nAfficher(\"x / y =\")\nAfficher(x / y)",
+  "python_code": "x = int(input())\ny = int(input())\nprint(\"x * y =\")\nprint(x * y)\nprint(\"x / y =\")\nprint(x / y)"
+},
+{
+  "id": "39",
+  "image_path": "./images/alg_039.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nLire(c)\nAfficher(\"Produit:\")\nAfficher(a * b * c)",
+  "python_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint(\"Produit:\")\nprint(a * b * c)"
+},
+{
+  "id": "40",
+  "image_path": "./images/alg_040.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(a)\nLire(b)\nLire(c)\nAfficher(\"Moyenne:\")\nAfficher((a + b + c) / 3)",
+  "python_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint(\"Moyenne:\")\nprint((a + b + c) / 3)"
+},
+{
+  "id": "41",
+  "image_path": "./images/alg_041.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(note)\nAfficher(\"Note:\")\nAfficher(note)",
+  "python_code": "note = float(input())\nprint(\"Note:\")\nprint(note)"
+},
+{
+  "id": "42",
+  "image_path": "./images/alg_042.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(note1)\nLire(note2)\nAfficher(\"Total:\")\nAfficher(note1 + note2)",
+  "python_code": "note1 = float(input())\nnote2 = float(input())\nprint(\"Total:\")\nprint(note1 + note2)"
+},
+{
+  "id": "43",
+  "image_path": "./images/alg_043.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(note1)\nLire(note2)\nAfficher(\"Moyenne:\")\nAfficher((note1 + note2) / 2)",
+  "python_code": "note1 = float(input())\nnote2 = float(input())\nprint(\"Moyenne:\")\nprint((note1 + note2) / 2)"
+},
+{
+  "id": "44",
+  "image_path": "./images/alg_044.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(prix)\nAfficher(\"Prix TTC (20%):\")\nAfficher(prix * 1.2)",
+  "python_code": "prix = float(input())\nprint(\"Prix TTC (20%):\")\nprint(prix * 1.2)"
+},
+{
+  "id": "45",
+  "image_path": "./images/alg_045.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(prix)\nAfficher(\"Remise 10%:\")\nAfficher(prix * 0.9)",
+  "python_code": "prix = float(input())\nprint(\"Remise 10%:\")\nprint(prix * 0.9)"
+},
+{
+  "id": "46",
+  "image_path": "./images/alg_046.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(salaire)\nAfficher(\"Salaire annuel:\")\nAfficher(salaire * 12)",
+  "python_code": "salaire = float(input())\nprint(\"Salaire annuel:\")\nprint(salaire * 12)"
+},
+{
+  "id": "47",
+  "image_path": "./images/alg_047.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(h)\nLire(m)\nAfficher(\"Heure:\")\nAfficher(h)\nAfficher(\"Minute:\")\nAfficher(m)",
+  "python_code": "h = int(input())\nm = int(input())\nprint(\"Heure:\")\nprint(h)\nprint(\"Minute:\")\nprint(m)"
+},
+{
+  "id": "48",
+  "image_path": "./images/alg_048.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(distance)\nLire(temps)\nAfficher(\"Vitesse:\")\nAfficher(distance / temps)",
+  "python_code": "distance = float(input())\ntemps = float(input())\nprint(\"Vitesse:\")\nprint(distance / temps)"
+},
+{
+  "id": "49",
+  "image_path": "./images/alg_049.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(celsius)\nAfficher(\"Fahrenheit:\")\nAfficher((celsius * 9 / 5) + 32)",
+  "python_code": "celsius = float(input())\nprint(\"Fahrenheit:\")\nprint((celsius * 9 / 5) + 32)"
+},
+{
+  "id": "50",
+  "image_path": "./images/alg_050.png",
+  "category": "Lecture & Écriture",
+  "text": "Lire(rayon)\nAfficher(\"Perimetre:\")\nAfficher(2 * 3.14 * rayon)\nAfficher(\"Aire:\")\nAfficher(3.14 * rayon * rayon)",
+  "python_code": "rayon = float(input())\nprint(\"Perimetre:\")\nprint(2 * 3.14 * rayon)\nprint(\"Aire:\")\nprint(3.14 * rayon * rayon)"
+}
+]
