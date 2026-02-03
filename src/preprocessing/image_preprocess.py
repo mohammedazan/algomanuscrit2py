@@ -240,7 +240,7 @@ def main():
     
     # Define sample image path
     # Adjust this to point to an actual image from your dataset
-    sample_image = "Dataset/images/alg_01.jpeg"
+    sample_image = "Dataset/images/alg_021.jpeg"
     
     # Alternative: Use absolute path
     # sample_image = "d:/2025-01-30/Bureau/master/S3/RESEAUX DE NEURONES ARTIFICIELS ET DEEP APPRENTISSAGE/PFE antigravity/Dataset/images/alg_01.jpeg"
