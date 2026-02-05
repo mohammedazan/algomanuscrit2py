@@ -370,7 +370,7 @@ def main():
     print("=" * 80)
     
     # Define sample image path
-    sample_image = "Dataset/images/alg_01.jpeg"
+    sample_image = "Dataset/images/alg_040.png"
     
     try:
         # Create configs for both modes
