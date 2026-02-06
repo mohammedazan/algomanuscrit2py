@@ -712,5 +712,355 @@
     "category": "Tableaux (Matrices)",
     "text": "Algorithme Transpose;\nVariables A, B : Tableau[1..3, 1..3] de Entier;\nVariables i, j : Entier;\nDébut\n    Pour i DE 1 À 3 Faire\n        Pour j DE 1 À 3 Faire\n            B[j, i] <- A[i, j];\n        Fin Pour;\n    Fin Pour;\nFin Algorithme",
     "python_code": "A = [[1,2,3],[4,5,6],[7,8,9]]\nB = [[0 for _ in range(3)] for _ in range(3)]\nfor i in range(1, 4):\n    for j in range(1, 4):\n        B[j-1][i-1] = A[i-1][j-1]"
+  },
+  {
+    "id": "103",
+    "image_path": "./images/new_01.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherBonjour()\n  Ecrire (\"Bonjour\")\nFin Procédure.",
+    "python_code": "def afficher_bonjour():\n    print(\"Bonjour\")"
+  },
+  {
+    "id": "104",
+    "image_path": "./images/new_02.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherZero()\n  Ecrire (0)\nFin Procédure.",
+    "python_code": "def afficher_zero():\n    print(0)"
+  },
+  {
+    "id": "105",
+    "image_path": "./images/new_03.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherUn()\n  Ecrire (1)\nFin Procédure.",
+    "python_code": "def afficher_un():\n    print(1)"
+  },
+  {
+    "id": "106",
+    "image_path": "./images/new_04.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherNombre()\n  lire (x)\n  Ecrire (x)\nFin Procédure",
+    "python_code": "def afficher_nombre():\n    x = int(input())\n    print(x)"
+  },
+  {
+    "id": "107",
+    "image_path": "./images/new_05.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherSomme()\n  lire (a)\n  lire (b)\n  S ← a+b\n  Ecrire (S)\nFin Procédure",
+    "python_code": "def afficher_somme():\n    a = int(input())\n    b = int(input())\n    s = a + b\n    print(s)"
+  },
+  {
+    "id": "108",
+    "image_path": "./images/new_06.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherDifference()\n  lire (a)\n  lire (b)\n  d ← a - b\n  Ecrire (d)\nFin Procédure",
+    "python_code": "def afficher_difference():\n    a = int(input())\n    b = int(input())\n    d = a - b\n    print(d)"
+  },
+  {
+    "id": "109",
+    "image_path": "./images/new_07.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherProduit()\n  Lire (a)\n  Lire (b)\n  P ← a * b\n  Ecrire (P)\nFin Procédure",
+    "python_code": "def afficher_produit():\n    a = int(input())\n    b = int(input())\n    p = a * b\n    print(p)"
+  },
+  {
+    "id": "110",
+    "image_path": "./images/new_08.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherCarre()\n  lire (x)\n  C ← X * X\n  Ecrire (C)\nFin Procédure",
+    "python_code": "def afficher_carre():\n    x = int(input())\n    c = x * x\n    print(c)"
+  },
+  {
+    "id": "111",
+    "image_path": "./images/new_09.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherDouble()\n  Lire (x)\n  D ← 2 * x\n  Ecrire (D)\nFin Procedure",
+    "python_code": "def afficher_double():\n    x = int(input())\n    d = 2 * x\n    print(d)"
+  },
+  {
+    "id": "112",
+    "image_path": "./images/new_10.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherMessage()\n  Lire (msg)\n  Ecrire (msg)\nFin Procedure",
+    "python_code": "def afficher_message():\n    msg = input()\n    print(msg)"
+  },
+  {
+    "id": "113",
+    "image_path": "./images/new_11.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherCinq()\n  Ecrire (5)\nFin Procedure",
+    "python_code": "def afficher_cinq():\n    print(5)"
+  },
+  {
+    "id": "114",
+    "image_path": "./images/new_12.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherDix()\n  Ecrire (10)\nFin Procedure",
+    "python_code": "def afficher_dix():\n    print(10)"
+  },
+  {
+    "id": "115",
+    "image_path": "./images/new_13.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherSommeTrois()\n  Lire (a)\n  Lire (b)\n  Lire (c)\n  S ← a + b + c\n  Ecrire (S)\nFin Procedure",
+    "python_code": "def afficher_somme_trois():\n    a = int(input())\n    b = int(input())\n    c = int(input())\n    s = a + b + c\n    print(s)"
+  },
+  {
+    "id": "116",
+    "image_path": "./images/new_14.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherProduitTrois()\n  Lire (a)\n  Lire (b)\n  Lire (c)\n  P ← a * b * c\n  Ecrire (P)\nFin Procedure",
+    "python_code": "def afficher_produit_trois():\n    a = int(input())\n    b = int(input())\n    c = int(input())\n    p = a * b * c\n    print(p)"
+  },
+  {
+    "id": "117",
+    "image_path": "./images/new_15.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherMoitié()\n  Lire (x)\n  M ← x / 2\n  Ecrire (M)\nFin Procedure",
+    "python_code": "def afficher_moitie():\n    x = int(input())\n    m = x / 2\n    print(m)"
+  },
+  {
+    "id": "118",
+    "image_path": "./images/new_16.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherTriple()\n  Lire (x)\n  T ← 3 * x\n  Ecrire (T)\nFin Procedure",
+    "python_code": "def afficher_triple():\n    x = int(input())\n    t = 3 * x\n    print(t)"
+  },
+  {
+    "id": "119",
+    "image_path": "./images/new_17.jpg",
+    "category": "procedure",
+    "text": "Procedure afficherConstante()\n  Ecrire (7)\nFin Procedure",
+    "python_code": "def afficher_constante():\n    print(7)"
+  },
+  {
+    "id": "120",
+    "image_path": "./images/new_18.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherValeur(a)\nEcrire(a)\nFin Procedure",
+    "python_code": "def afficher_valeur(a):\n    print(a)"
+  },
+  {
+    "id": "121",
+    "image_path": "./images/new_19.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherAddition(a,b)\np <- a + b\nEcrire(p)\nFin Procedure",
+    "python_code": "def afficher_addition(a, b):\n    print(a + b)"
+  },
+  {
+    "id": "122",
+    "image_path": "./images/new_20.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherSoustraction(a,b)\np <- a - b\nEcrire(p)\nFin Procedure",
+    "python_code": "def afficher_soustraction(a, b):\n    print(a - b)"
+  },
+  {
+    "id": "123",
+    "image_path": "./images/new_21.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherMultiplication(a,b)\np <- a * b\nEcrire(p)\nFin Procedure",
+    "python_code": "def afficher_multiplication(a, b):\n    print(a * b)"
+  },
+  {
+    "id": "124",
+    "image_path": "./images/new_22.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherDivision(a,b)\np <- a / b\nEcrire(p)\nFin Procedure",
+    "python_code": "def afficher_division(a, b):\n    print(a / b)"
+  },
+  {
+    "id": "125",
+    "image_path": "./images/new_23.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherResultat(x)\nEcrire(x)\nFin Procedure",
+    "python_code": "def afficher_resultat(x):\n    print(x)"
+  },
+  {
+    "id": "126",
+    "image_path": "./images/new_24.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherTexte()\nEcrire(\"Algo\")\nFin Procedure",
+    "python_code": "def afficher_texte():\n    print(\"Algo\")"
+  },
+  {
+    "id": "127",
+    "image_path": "./images/new_25.jpeg",
+    "category": "procedure",
+    "text": "Procedure afficherValeurFixe()\nEcrire(100)\nFin Procedure",
+    "python_code": "def afficher_valeur_fixe():\n    print(100)"
+  },
+  {
+    "id": "128",
+    "image_path": "./images/new_26.jpeg",
+    "category": "function",
+    "text": "FONCTION somme(a,b)\nRETOURNER a + b\nFIN FONCTION",
+    "python_code": "def somme(a, b):\n    return a + b"
+  },
+  {
+    "id": "129",
+    "image_path": "./images/new_27.jpeg",
+    "category": "function",
+    "text": "FONCTION difference(a,b)\nRETOURNER a - b\nFIN FONCTION",
+    "python_code": "def difference(a, b):\n    return a - b"
+  },
+  {
+    "id": "130",
+    "image_path": "./images/new_28.jpeg",
+    "category": "function",
+    "text": "FONCTION produit(a,b)\nRETOURNER a * b\nFIN FONCTION",
+    "python_code": "def produit(a, b):\n    return a * b"
+  },
+  {
+    "id": "131",
+    "image_path": "./images/new_29.jpeg",
+    "category": "function",
+    "text": "FONCTION decrementer(x)\nRETOURNER x - 1\nFIN FONCTION",
+    "python_code": "def decrementer(x):\n    return x - 1"
+  },
+  {
+    "id": "132",
+    "image_path": "./images/new_30.jpeg",
+    "category": "function",
+    "text": "FONCTION incrementer(x)\nRETOURNER x + 1\nFIN FONCTION",
+    "python_code": "def incrementer(x):\n    return x + 1"
+  },
+  {
+    "id": "133",
+    "image_path": "./images/new_31.jpeg",
+    "category": "function",
+    "text": "FONCTION moitie(x)\nRETOURNER x / 2\nFIN FONCTION",
+    "python_code": "def moitie(x):\n    return x / 2"
+  },
+  {
+    "id": "134",
+    "image_path": "./images/new_32.jpeg",
+    "category": "function",
+    "text": "FONCTION double(x)\nRETOURNER 2 * x\nFIN FONCTION",
+    "python_code": "def double(x):\n    return 2 * x"
+  },
+  {
+    "id": "135",
+    "image_path": "./images/new_33.jpeg",
+    "category": "function",
+    "text": "FONCTION carre(x)\nRETOURNER x * x\nFIN FONCTION",
+    "python_code": "def carre(x):\n    return x * x"
+  },
+  {
+    "id": "136",
+    "image_path": "./images/new_34.jpeg",
+    "category": "function",
+    "text": "FONCTION constante()\nRETOURNER 5\nFIN FONCTION",
+    "python_code": "def constante():\n    return 5"
+  },
+  {
+    "id": "137",
+    "image_path": "./images/new_35.jpeg",
+    "category": "function",
+    "text": "FONCTION sommeTrois(a, b, c)\nRETOURNER a + b + c\nFIN FONCTION",
+    "python_code": "def sommeTrois(a, b, c):\n    return a + b + c"
+  },
+  {
+    "id": "138",
+    "image_path": "./images/new_36.jpeg",
+    "category": "function",
+    "text": "FONCTION produitTrois(a, b, c)\nRETOURNER a * b * c\nFIN FONCTION",
+    "python_code": "def produitTrois(a, b, c):\n    return a * b * c"
+  },
+  {
+    "id": "139",
+    "image_path": "./images/new_37.jpeg",
+    "category": "function",
+    "text": "FONCTION triple(x)\nRETOURNER 3 * x\nFIN FONCTION",
+    "python_code": "def triple(x):\n    return 3 * x"
+  },
+  {
+    "id": "140",
+    "image_path": "./images/new_38.jpeg",
+    "category": "function",
+    "text": "FONCTION valeur(x)\nRETOURNER x\nFIN FONCTION",
+    "python_code": "def valeur(x):\n    return x"
+  },
+  {
+    "id": "141",
+    "image_path": "./images/new_39.jpeg",
+    "category": "function",
+    "text": "FONCTION calcul(a, b)\nRETOURNER a + b\nFIN FONCTION",
+    "python_code": "def calcul(a, b):\n    return a + b"
+  },
+  {
+    "id": "142",
+    "image_path": "./images/new_40.jpeg",
+    "category": "function",
+    "text": "FONCTION resultat(x)\nRETOURNER x\nFIN FONCTION",
+    "python_code": "def resultat(x):\n    return x"
+  },
+  {
+    "id": "143",
+    "image_path": "./images/new_41.jpeg",
+    "category": "function",
+    "text": "FONCTION nombre()\nRETOURNER 1\nFIN FONCTION",
+    "python_code": "def nombre():\n    return 1"
+  },
+  {
+    "id": "144",
+    "image_path": "./images/new_42.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME fixe\n    FONCTION fixe()\n        RETOURNER 10\n    FIN FONCTION\n\n    resultat ← fixe()\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def fixe():\n    return 10\n\nresultat = fixe()\nprint(resultat)"
+  },
+  {
+    "id": "145",
+    "image_path": "./images/new_43.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME division\n    FONCTION division(a, b)\n        RETOURNER a / b\n    FIN FONCTION\n\n    resultat ← division(10, 2)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def division(a, b):\n    return a / b\n\nresultat = division(10, 2)\nprint(resultat)"
+  },
+  {
+    "id": "146",
+    "image_path": "./images/new_44.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME addition\n    FONCTION addition(a, b)\n        RETOURNER a + b\n    FIN FONCTION\n\n    resultat ← addition(5, 6)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def addition(a, b):\n    return a + b\n\nresultat = addition(5, 6)\nprint(resultat)"
+  },
+  {
+    "id": "147",
+    "image_path": "./images/new_45.jpeg",
+    "category": "fonction",
+    "text": "Fonction division(a, b)\nsi b != 0 retourner a / b\nsinon retourner erreur",
+    "python_code": "def division(a, b):\n    if b != 0:\n        return a / b\n    else:\n        return \"Erreur : division par zero\""
+  },
+  {
+    "id": "148",
+    "image_path": "./images/new_46.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME soustraction\n    FONCTION soustraction(a, b)\n        RETOURNER a - b\n    FIN FONCTION\n\n    resultat ← soustraction(9, 3)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def soustraction(a, b):\n    return a - b\n\nresultat = soustraction(9, 3)\nprint(resultat)"
+  },
+  {
+    "id": "149",
+    "image_path": "./images/new_47.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME multiplication\n    FONCTION multiplication(a, b)\n        RETOURNER a * b\n    FIN FONCTION\n\n    resultat ← multiplication(4, 5)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def multiplication(a, b):\n    return a * b\n\nresultat = multiplication(4, 5)\nprint(resultat)"
+  },
+  {
+    "id": "150",
+    "image_path": "./images/new_48.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME moyenne\n    FONCTION moyenne(a, b)\n        RETOURNER (a + b) / 2\n    FIN FONCTION\n\n    resultat ← moyenne(6, 8)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def moyenne(a, b):\n    return (a + b) / 2\n\nresultat = moyenne(6, 8)\nprint(resultat)"
+  },
+  {
+    "id": "151",
+    "image_path": "./images/new_49.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME valeurFixe\n    FONCTION valeurFixe()\n        RETOURNER 100\n    FIN FONCTION\n\n    resultat ← valeurFixe()\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def valeurFixe():\n    return 100\n\nresultat = valeurFixe()\nprint(resultat)"
+  },
+  {
+    "id": "152",
+    "image_path": "./images/new_50.jpeg",
+    "category": "fonction",
+    "text": "ALGORITHME calcul\n    FONCTION calcul()\n        RETOURNER x + 2\n    FIN FONCTION\n    resultat ← calcul(5)\n    AFFICHER resultat\nFIN ALGORITHME",
+    "python_code": "def calcul(x):\n    return x + 2\n\nresultat = calcul(5)\nprint(resultat)"
   }
 ]
