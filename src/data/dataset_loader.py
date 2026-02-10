@@ -69,8 +69,44 @@ class DatasetLoader:
             
             # Load the CSV
             print(f"📁 Loading dataset from: {self.dataset_path}")
-            self.df = pd.read_csv(self.dataset_path, sep=",", quotechar='"',escapechar="\\",engine="python",encoding="utf-8")
+            self.df = pd.read_csv(
+                self.dataset_path,
+                sep=",",
+                quotechar='"',
+                escapechar="\\",
+                engine="python",
+                encoding="utf-8"
+            )
+            # ✅ FIX: normalize line breaks inside text & python_code
+            def _fix_newlines(s):
+                if not isinstance(s, str):
+                    return s
+                # case 1: real escaped newline
+                s = s.replace("\\n", "\n")
+                # case 2: broken newline stored as 'n' between statements
+                s = s.replace(")n", ")\n")
+                s = s.replace(";\n", ";\n")
+                s = s.replace("nLire", "\nLire")
+                s = s.replace("nAfficher", "\nAfficher")
+                s = s.replace("nEcrire", "\nEcrire")
+                s = s.replace("nprint", "\nprint")
+                return s
             
+            if "text" in self.df.columns:
+                self.df["text"] = self.df["text"].apply(_fix_newlines)
+            
+            if "python_code" in self.df.columns:
+                self.df["python_code"] = self.df["python_code"].apply(_fix_newlines)
+
+    
+            # ✅ FIX: convert literal "\n" sequences into real newlines
+            # This ensures multiline algorithm text and python_code are displayed correctly
+            # and used correctly during training/parsing.
+            if "text" in self.df.columns:
+                self.df["text"] = self.df["text"].astype(str).str.replace("\\n", "\n", regex=False)
+            if "python_code" in self.df.columns:
+                self.df["python_code"] = self.df["python_code"].astype(str).str.replace("\\n", "\n", regex=False)
+    
             print(f"✓ Dataset loaded successfully!")
             print(f"   Columns: {list(self.df.columns)}")
             
