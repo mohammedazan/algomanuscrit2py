@@ -36,41 +36,39 @@ from tensorflow.keras.models import Model
 # CHARACTER SET CONFIGURATION
 # ============================================================================
 
+import os
+import json
+
 def get_character_set():
     """
-    Define the character set for French algorithm text recognition.
+    Load character set from vocab.json.
     
-    Includes:
-    - Lowercase letters (a-z)
-    - Uppercase letters (A-Z)
-    - Digits (0-9)
-    - Common symbols and punctuation
-    - French accented characters
-    - Blank character for CTC (automatically added by TensorFlow)
+    The vocabulary file is expected to be in the same directory as this file.
     
     Returns:
         list: List of characters
         dict: Character to index mapping
         dict: Index to character mapping
     """
-    # Basic alphanumeric
-    chars = list('abcdefghijklmnopqrstuvwxyz')
-    chars += list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-    chars += list('0123456789')
+    # Path to vocab.json (same directory as this file)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    vocab_path = os.path.join(current_dir, 'vocab.json')
     
-    # French accented characters
-    chars += list('àâäæçéèêëïîôùûüÿœ')
-    chars += list('ÀÂÄÆÇÉÈÊËÏÎÔÙÛÜŸŒ')
+    if not os.path.exists(vocab_path):
+        raise FileNotFoundError(
+            f"Vocabulary file not found at: {vocab_path}\n"
+            f"Please run src/data/text_normalizer.py first to generate it."
+        )
+
+    with open(vocab_path, 'r', encoding='utf-8') as f:
+        vocab_data = json.load(f)
+        
+    chars = vocab_data['characters']
+    char_to_num = vocab_data['char_to_index']
     
-    # Common symbols in algorithms
-    chars += [' ', '(', ')', '[', ']', '{', '}', 
-              '+', '-', '*', '/', '=', '<', '>', 
-              ':', ';', ',', '.', '!', '?', '"', "'",
-              '\\', '_']
-    
-    # Create mappings
-    char_to_num = {char: idx for idx, char in enumerate(chars)}
-    num_to_char = {idx: char for idx, char in enumerate(chars)}
+    # Convert keys back to int for index_to_char because JSON keys are always strings
+    # The keys in JSON are strings "0", "1", etc.
+    num_to_char = {int(k): v for k, v in vocab_data['index_to_char'].items()}
     
     return chars, char_to_num, num_to_char
 

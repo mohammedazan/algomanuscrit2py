@@ -31,6 +31,7 @@ import sys
 # Import model from model.py
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from ocr.model import build_lightweight_crnn, get_character_set
+from data.text_normalizer import normalize_text
 
 
 # ============================================================================
@@ -106,6 +107,9 @@ def load_dataset(config):
         
         # Get text label
         text = item['text']
+        
+        # Normalize text
+        text = normalize_text(text)
         
         # Verify image exists
         if os.path.exists(full_path):
@@ -444,6 +448,13 @@ def train_model(config):
     
     # Load dataset
     image_paths, labels = load_dataset(config)
+    
+    # Validation safety check
+    print(f"\n🔍 Vocabulary Verification:")
+    chars, _, _ = get_character_set()
+    print(f"   Vocabulary size: {len(chars)} characters")
+    if len(labels) > 0:
+        print(f"   Example normalized label: {repr(labels[0])}")
     
     # Dataset statistics
     print(f"\n📊 Dataset Statistics:")
