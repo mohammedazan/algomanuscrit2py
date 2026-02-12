@@ -366,11 +366,11 @@ def main():
     Demonstration of OCR prediction on a sample image.
     """
     # Sample image path (adjust to your dataset)
-    sample_image = "Dataset/images/alg_01.jpeg"
+    sample_image = "Dataset/images/alg_041.png"
     
     # Alternative paths to try
     alternative_paths = [
-        "Dataset/images/alg_01.jpeg",
+        "Dataset/images/alg_041.png",
         "Dataset/images/alg_02.jpeg",
         "Dataset/images/alg_03.jpeg",
     ]
