@@ -136,6 +136,7 @@ def load_and_preprocess_image(image_path, config):
     # Normalize to [0, 1] and add batch dimension
     processed_image = processed_image.astype(np.float32) / 255.0
     processed_image = np.expand_dims(processed_image, axis=0)  # Add batch dimension
+    print("   Before expand:", processed_image.shape)
     processed_image = np.expand_dims(processed_image, axis=-1)  # Add channel dimension
     
     print(f"   Final shape for model: {processed_image.shape}")
@@ -228,7 +229,8 @@ def decode_ctc_beam_search(predictions, num_to_char, beam_width=10):
 # MAIN PREDICTION FUNCTION
 # ============================================================================
 
-def predict_ocr(image_path, config=None, use_beam_search=False):
+def predict_ocr(model, num_to_char, image_path, config=None, use_beam_search=False):
+
     """
     Perform OCR prediction on a handwritten algorithm image.
     
@@ -256,7 +258,7 @@ def predict_ocr(image_path, config=None, use_beam_search=False):
     print("=" * 80)
     
     # Step 1: Load model
-    model, char_to_num, num_to_char = load_trained_model(config)
+    #model, char_to_num, num_to_char = load_trained_model(config)
     
     # Step 2: Load and preprocess image
     processed_image = load_and_preprocess_image(image_path, config)
@@ -392,8 +394,17 @@ def main():
     # Run prediction
     try:
         config = PredictionConfig()
-        recognized_text = predict_ocr(test_image, config, use_beam_search=False)
         
+        model, char_to_num, num_to_char = load_trained_model(config)
+
+        recognized_text = predict_ocr(
+            model=model,
+            num_to_char=num_to_char,
+            image_path=test_image,
+            config=config,
+            use_beam_search=False
+        )
+
         print("\n" + "=" * 80)
         print("✓ OCR prediction demonstration completed!")
         print("=" * 80)
@@ -418,12 +429,17 @@ def main():
 
 
 if __name__ == "__main__":
-    # Check for command line argument
-    if len(sys.argv) > 1:
-        # User provided image path
-        image_path = sys.argv[1]
-        config = PredictionConfig()
-        predict_ocr(image_path, config)
+    config = PredictionConfig()
+    model, char_to_num, num_to_char = load_trained_model(config)
+
+    sample_image = "Dataset/images/alg_01.jpeg"
+
+    if os.path.exists(sample_image):
+        predict_ocr(
+            model=model,
+            num_to_char=num_to_char,
+            image_path=sample_image,
+            config=config
+        )
     else:
-        # Run demonstration
-        main()
+        print("No sample image found.")

@@ -25,7 +25,7 @@ Output: (batch, time_steps, num_characters) - Character probabilities
 Author: Deep Learning Project Team
 Date: 2026-02-06
 """
-
+import os
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models
@@ -323,6 +323,39 @@ def analyze_model_complexity():
     print(f"   Large (250-300 samples): Can increase to [64, 128, 256] filters")
     print(f"   Beyond 300: Transition to standard CRNN architecture")
 
+def load_model(weights_path=None):
+    """
+    Load inference CRNN model with trained weights.
+    """
+
+    # Recreate character set
+    chars, _, _ = get_character_set()
+    num_classes = len(chars) + 1  # +1 for CTC blank
+
+    # Rebuild architecture
+    model = build_lightweight_crnn(
+        input_shape=(128, 512, 1),
+        num_classes=num_classes
+    )
+
+    # Default path if none provided
+    if weights_path is None:
+        base_dir = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "..")
+        )
+        weights_path = os.path.join(
+            base_dir,
+            "checkpoints",
+            "best_model.weights.h5"
+        )
+
+    if os.path.exists(weights_path):
+        model.load_weights(weights_path)
+        print(f"✓ Weights loaded from: {weights_path}")
+    else:
+        print(f"⚠ No weights file found at: {weights_path}")
+
+    return model
 
 def get_model_info():
     """
@@ -359,7 +392,6 @@ def get_model_info():
     
     return chars, char_to_num, num_to_char
 
-
 def main():
     """
     Demonstration of lightweight CRNN model creation and analysis.
@@ -392,6 +424,7 @@ def main():
     # Calculate parameter efficiency
     params = model.count_params()
     params_million = params / 1_000_000
+    
     
     print("\n" + "=" * 80)
     print("ARCHITECTURAL TRADE-OFFS SUMMARY")
