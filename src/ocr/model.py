@@ -46,6 +46,7 @@ def get_character_set():
     - Digits (0-9)
     - Common symbols and punctuation
     - French accented characters
+    - Special tokens for padding
     - Blank character for CTC (automatically added by TensorFlow)
     
     Returns:
@@ -53,8 +54,11 @@ def get_character_set():
         dict: Character to index mapping
         dict: Index to character mapping
     """
+    # Special tokens
+    chars = ['<pad>']
+    
     # Basic alphanumeric
-    chars = list('abcdefghijklmnopqrstuvwxyz')
+    chars += list('abcdefghijklmnopqrstuvwxyz')
     chars += list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     chars += list('0123456789')
     

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+
+# Virtual environments
+env/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Data & checkpoints (do NOT commit large datasets or trained models)
+Dataset/
+"dataset (1)/dataset/images/"
+checkpoints/
+*.weights.h5
+training_log.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Optional: ignore large notebooks outputs
+*.nbconvert.ipynb
+
+# Ensure git-lfs attributes if used
+.gitattributes
