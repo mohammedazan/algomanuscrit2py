@@ -26,11 +26,10 @@ from tensorflow import keras
 import cv2
 
 # Add parent directory to path for imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from ocr.model import build_lightweight_crnn, get_character_set
-from preprocessing.image_preprocess import PreprocessConfig, preprocess_image
-
+from src.ocr.model import build_lightweight_crnn, get_character_set
+from src.preprocessing.image_preprocess import PreprocessConfig, preprocess_image
+from src.preprocessing.line_segmentation import segment_lines
 
 # ============================================================================
 # CONFIGURATION
@@ -231,72 +230,48 @@ def decode_ctc_beam_search(predictions, num_to_char, beam_width=10):
 
 def predict_ocr(model, num_to_char, image_path, config=None, use_beam_search=False):
 
-    """
-    Perform OCR prediction on a handwritten algorithm image.
-    
-    Complete pipeline:
-    1. Load trained model
-    2. Preprocess image
-    3. Run inference
-    4. Decode CTC output
-    5. Return recognized text
-    
-    Args:
-        image_path: Path to input image
-        config: PredictionConfig object (optional)
-        use_beam_search: Whether to use beam search decoding (default: False)
-        
-    Returns:
-        str: Recognized text from the image
-    """
-    # Use default config if not provided
     if config is None:
         config = PredictionConfig()
-    
+
     print("=" * 80)
-    print("OCR PREDICTION - HANDWRITTEN ALGORITHM RECOGNITION")
+    print("OCR PREDICTION WITH LINE SEGMENTATION")
     print("=" * 80)
-    
-    # Step 1: Load model
-    #model, char_to_num, num_to_char = load_trained_model(config)
-    
-    # Step 2: Load and preprocess image
-    processed_image = load_and_preprocess_image(image_path, config)
-    
-    # Step 3: Run inference
-    print("\n🔮 Running OCR inference...")
-    predictions = model.predict(processed_image, verbose=0)
-    print(f"   Prediction shape: {predictions.shape}")
-    print(f"   Time steps: {predictions.shape[1]}")
-    print(f"   Character probabilities per step: {predictions.shape[2]}")
-    
-    # Step 4: Decode CTC output
-    print("\n📝 Decoding CTC output...")
-    
-    if use_beam_search:
-        print("   Using beam search decoding...")
-        decoded_text = decode_ctc_beam_search(predictions, num_to_char, beam_width=10)
-    else:
-        print("   Using greedy decoding...")
-        decoded_text = decode_ctc_predictions(predictions, num_to_char)
-    
-    # Step 5: Clean and format output
-    # Replace escaped newlines with actual newlines for readability
-    formatted_text = decoded_text.replace('\\n', '\n')
-    
-    # Print results
-    print("\n" + "=" * 80)
-    print("PREDICTION RESULTS")
-    print("=" * 80)
-    print(f"\n📄 Image: {os.path.basename(image_path)}")
-    print(f"\n🔤 Raw decoded text:")
-    print(f"   {repr(decoded_text)}")
-    print(f"\n✨ Formatted OCR output:")
-    print("-" * 80)
-    print(formatted_text)
-    print("-" * 80)
-    
-    return decoded_text
+
+    # Load original image
+    original_image = cv2.imread(image_path)
+
+    # Preprocess full image
+    preprocess_config = PreprocessConfig(mode=config.preprocess_mode)
+    processed_full = preprocess_image(original_image, preprocess_config)
+
+    # Segment lines
+    lines = segment_lines(processed_full)
+
+    print(f"Detected {len(lines)} lines")
+
+    full_text = ""
+
+    for idx, line_img in enumerate(lines):
+
+        print(f"Processing line {idx+1}")
+
+        # Resize to model input
+        line_resized = cv2.resize(line_img, (512, 128))
+
+        line_resized = line_resized.astype(np.float32) / 255.0
+        line_resized = np.expand_dims(line_resized, axis=0)
+        line_resized = np.expand_dims(line_resized, axis=-1)
+
+        predictions = model.predict(line_resized, verbose=0)
+
+        if use_beam_search:
+            decoded_text = decode_ctc_beam_search(predictions, num_to_char)
+        else:
+            decoded_text = decode_ctc_predictions(predictions, num_to_char)
+
+        full_text += decoded_text + "\n"
+
+    return full_text
 
 
 def predict_batch(image_paths, config=None):

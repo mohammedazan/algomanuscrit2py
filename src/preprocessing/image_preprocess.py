@@ -17,6 +17,21 @@ Preprocessing Pipeline:
 4. Morphological opening (optional, mode-dependent)
 5. Smart resize with aspect-ratio preservation and padding
 
+The goal of preprocessing is to normalize image quality and reduce 
+variations caused by lighting conditions, shadows, noise, or slight 
+camera distortions.
+
+This stage ensures that:
+- Text contrast is enhanced (CLAHE & normalization)
+- Dark images are corrected (gamma adjustment)
+- Noise is reduced (Gaussian blur & morphology)
+- Text is binarized for clearer character separation
+- Aspect ratio is preserved while resizing
+
+By standardizing the input images, the preprocessing pipeline 
+improves OCR accuracy and model robustness, especially for 
+real-world handwritten and slightly dark images.
+
 Author: Deep Learning Project Team
 Date: 2026-02-04
 """
@@ -165,6 +180,28 @@ def apply_morphological_opening(image, kernel_size=(2, 2)):
     opened = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
     return opened
 
+def apply_clahe(gray):
+    """
+    Improve local contrast using CLAHE.
+    Very effective for slightly dark images.
+    """
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    return clahe.apply(gray)
+
+
+def adjust_gamma(image, gamma=1.2):
+    """
+    Gamma correction for brightness adjustment.
+    gamma > 1 brightens dark images.
+    """
+    invGamma = 1.0 / gamma
+    table = np.array([
+        ((i / 255.0) ** invGamma) * 255
+        for i in np.arange(0, 256)
+    ]).astype("uint8")
+
+    return cv2.LUT(image, table)
+
 
 def deskew_image(image):
     """
@@ -203,18 +240,33 @@ def preprocess_image(image, config):
         
     Returns:
         numpy.ndarray: Preprocessed image of shape (target_height, target_width)
+
+        
     """
     # Step 1: Convert to grayscale
     if len(image.shape) == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     else:
         gray = image.copy()
+
+    # Step 2: Normalize brightness
+    gray = cv2.normalize(gray, None, 0, 255, cv2.NORM_MINMAX)
+
+    # Step 3: Detect dark image automatically
+    mean_intensity = np.mean(gray)
+
+    if mean_intensity < 100:
+        gray = adjust_gamma(gray, gamma=1.5)
+
+    # Step 4: Apply CLAHE (contrast enhancement)
+    gray = apply_clahe(gray)
+
     
-    # Step 2: Optional Gaussian blur (noise reduction)
+    # Step 5: Optional Gaussian blur (noise reduction)
     if config.apply_blur:
         gray = cv2.GaussianBlur(gray, config.blur_kernel, 0)
     
-    # Step 3: Adaptive thresholding (binarization)
+    # Step 6: Adaptive thresholding (binarization)
     thresh = cv2.adaptiveThreshold(
         gray,
         255,
@@ -224,11 +276,11 @@ def preprocess_image(image, config):
         config.threshold_c
     )
     
-    # Step 4: Optional morphological opening (noise cleanup)
+    # Step 7: Optional morphological opening (noise cleanup)
     if config.apply_morphology:
         thresh = apply_morphological_opening(thresh, config.morph_kernel_size)
     
-    # Step 5: Resize with aspect ratio preservation and padding
+    # Step 8: Resize with aspect ratio preservation and padding
     processed = resize_and_pad(thresh, config.target_height, 
                                config.target_width, config.pad_value)
     
